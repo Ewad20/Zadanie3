@@ -7,18 +7,16 @@ public class Task {
     private String name;
     private Date date;
     private boolean done;
+    private Category category; // Dodane pole typu Category
 
     public Task() {
         id = UUID.randomUUID();
         date = new Date();
+        this.category = Category.HOME;
     }
 
     public UUID getId() {
         return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -32,7 +30,6 @@ public class Task {
     public Date getDate() {
         return date;
     }
-
     public void setDate(Date date) {
         this.date = date;
     }
@@ -43,5 +40,14 @@ public class Task {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    // Metody dostępowe do pola Category
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
